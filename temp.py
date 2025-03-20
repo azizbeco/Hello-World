@@ -1,79 +1,115 @@
 
-# sum=0
 
-# # Ketma ketliklar bilan ishlash
-# for x in [1,2,3,4]:
-#     sum=sum+x
-# print(sum) # forni list bilan ishlashi
+# def times(x,y):
+#     return x*y
 
-# for x in "Javohir":
-#     print(sum) # str bilan ishlash
-
-# month =("January","February","March")
-# for mo in month:
-#     print(mo) # Tuple bilan ishlashi
+# print(times(4,'no'))
 
 
+# def kesishmalar(soz1,soz2):
+#     res =[]
+#     for x in soz1:
+#         if x in soz2:
+#             res.append(x)
+    
+#     return res
 
-# player={'name':'Javohir','age':25}
+# num1=[1,2,3,4,5,8,9,10]
+# num2=[2,3,5,6,8,10,9,7]
 
-# for key in player:
-#     print(value) # dict bilan ishlash 
-
-# for value in player.values(): #player.value() - value ni olib berish uchun
-#     print(value)
-
-# for key,value in player.items():
-#     print(key)
-#     print(value)  # player.items() key va valueni  bir vaqtda olish uchun
-
-
-# listni aylantirish
-
-# games = ['far cry','assassins','kingdom come','the witcher','fifa']
-# for i in range(len(games)):
-#     print(games[i])
-
-
-# list index va value olish 
-# games = ['far cry','assassins','kingdom come','the witcher','fifa']
-# for index,name in enumerate(games):
-#     print(index)
-#     print(name)
+# print(kesishmalar(num1,num2))
 
 
 
 
+# def hello():
+#     x= 5
+#     def inner():
+#         x=4
+#         print(x)
+#     print(x)
+#     inner()
 
-# import random
-
-# numbers=[]
-
-# while len(numbers) <= 50:
-#     random_number=random.randint(1,100)
-#     numbers.append(random_number)
-
-# for i in numbers:
-#     if i%2:print(i)
+# hello()
 
 
-# while a<=100:
-#     numbers.append(a)
-#     a+=1
+#      Global  x 
+# z=5
+# def global_change():
+#     global z
+#     z=4
+#     print(z)
+
+# global_change()
+# print(z)
 
 
 
 
-unli=['a','o','u','i','e']
+# nonlocal
+
+# x=5
+# def hello():
+#     x=3
+#     def inner():
+#         nonlocal x
+#         x=2
+#     inner()
+#     print(x)
+# hello()
+# print(x)
+
+# all=0
+# while True:
+  
+#     def count():
+#         all
+#     count()  
+
+#     if all == 10:break
+#     all+=1
+    
+# print(all)    
+          
+
+
+
+
+
+
+WIDTH,HEIGHT=5,5
+
+playerX,playerY=3,3
+
+def draw():
+    for y in range(HEIGHT):
+        for x in range(WIDTH):
+            if x==playerX and y==playerY:
+                print('|',end=' ')
+            else:
+                print('*' , end=' ')
+        print()
+
+def move(moveTo):
+    global playerX,playerY
+    if moveTo=='w' and playerY>0:
+        playerY-=1
+    elif moveTo=='s' and playerX < HEIGHT-1:
+        playerY+=1
+    elif moveTo=='a' and playerX > 0:
+        playerX-=1
+    elif moveTo=='d' and playerX < WIDTH-1:
+        playerX+=1
+
 
 while True:
-    w=input('enter a word: ')
-    latters=[]
-    for i in w:
-        if i in unli:
-            latters.append(i)
-    print(f"Barcha unli harflar ro'yxati \n{len(latters)}")
+    draw()
+    moveTo=input("Qatga yuramiza")
+    move(moveTo)
 
-    if w=='stop': break
 
+
+# shaxmat
+# dolar ushlash
+# lift
 
