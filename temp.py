@@ -1,75 +1,104 @@
-# import time
 
-# def find(x ,y):
-#     if x<y:
-#         for i in range(x,y):
-#             print(f"{i} ↧ ")
-#             time.sleep(1)
-#         # ↧
-#     else:
-#         for i in range(y,x):
-#             print(f"{i}  ↥ ")
-#             time.sleep(1)
+# def times(n):
+#     inner = (lambda x: x * n)
+#     return inner
 
-# find(1,5) 
-
-# x =0
-
-# def count():
-#     global x
-#     x+=1
-#     return x
+# done = times(2)
+# print(done(3))
 
 
 
-# print(count())
-# print(count())
-# print(count())
-# print(count())
+# inner = (lambda x: x+5)
+# print(inner(2))
 
 
 
+# def daraja(x):
+#     inner = (lambda n:n**x)
+#     return inner
+
+# son = daraja(4)
+
+# print(son(2))
 
 
 
+# Cache saqlash 
 
-# def all(x):
-#     def count():
-#         nonlocal x
-#         x+=1
-#         return x
-#     return count
-# counter=all(5)
+# def cache():
+#     saved = {}
+#     def get_or_compute(n):
+#         if n not in saved:
+#             print(f"hisoblaymz {n} uchun .....")
+#             saved[n] = n**2
 
-# print(counter())
-# print(counter())
-# print(counter())
-# print(counter())
+#         return saved[n]
+#     return get_or_compute
+# cached_square= cache()
+# print(cached_square(6))
+# print(cached_square(6))
 
 
-
-# def fibonacci(n):
-#     if n<= 0:
-#         return 0
-#     elif n == 1:
+# def factorial(n):
+#     if n==1:
 #         return 1
-#     return fibonacci(n-1) +fibonacci(n-2)
+#     return n*factorial(n-1)
+# print(factorial(5))
 
 
-# print(fibonacci(3))
 
 
-# def calc():
 
-#     x= input('>>>X ')
-#     y= input('>>>Y ')
+#                      Rekursiya
 
-#     print(int(x)+int(y))
-#     result = input('Qayta ishlatish uchun Xisoblash deb yozing ask holda stop ')
-#     if result =='stop':
-#         return
-#     calc()
+# def find_key(box):
+#     for item in box:
+#         if isinstance(item,list):
+#             print("Karobka ochilyapti.....")
+#             if find_key(item):
+#                 return True
+#             elif item=="kalit":
+#                 print("Kalit topildi ")
+#                 return True  
+#         return False
 
-# calc()
+# big_box=[
+#     [],
+#     ["daftar","olma",["quti",["kalit"],'olma']]
+#     ["daftar",["ruchka",["olma"]]]
+# ]
+
+
+# find_key(big_box)
+
+
+
+# Argumentlarni o'zgartirish
+
+# def changer(a,b):
+#     a=2
+#     b[0]='spam'
+# X=1
+# L=[1,2]
+# changer(X,L)
+
+
+# print(X,L)
+
+
+# def changer(a,b):
+#     b = b[:] # b.copy()
+#     a=2
+#     b[0]='spam'
+# X=1
+# L=[1,2]
+# changer(X,L)
+
+
+# print(X,L)
+
+
+
+
 
 
