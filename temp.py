@@ -1,113 +1,80 @@
-
-# class Dog:
-#     def __init__(self,name,bread): # self- kelajakda yaratiladigon objectga link
+# class Laptop:
+#     def __init__(self,name,price,model):
 #         self.name = name
-#         self.bread = bread
-
-# my_dog = Dog('Jek','Bekon')
-# print(my_dog.name)
-# print(my_dog.bread)
-
-# your_dog = Dog('John','Stake')
-# print(your_dog.name)
-
-
-
-
-# class Book:
-#     def __init__(self,name,auther,year):
-#         self.name = name
-#         self.auther = auther
-#         self.year = year
-
-# name=input("Book name : ")
-# auther=input("Book Auther : ")
-# year=input("Book year : ")
-
-# about_book = Book(name,auther,year)
-
-# print(f"{about_book.name} was written  in by {about_book.auther} in {about_book.year}")
-
-
-
-
-
-
-# class Dog:
-#     def __init__(self,name,bread): # self- kelajakda yaratiladigon objectga link
-#         self.name = name  # Yaratiladigon object briktirish
-#         self.bread = bread
-
-#     def bark(self,times=1):# yangi object metodini berish
-#         for _ in range(times):
-#             print(f'{self.name} says Woof!')
-
-# my_dog = Dog('Jek','Bekon')
-# print(my_dog.name)
-# print(my_dog.bread)
-
-# your_dog = Dog('John','Stake')
-# print(your_dog.name)
-# my_dog.bark(2)
-
-
-
-# class Kvadrat:
-#     def __init__(self,x,y):
-#         self.x = x
-#         self.y = y
-
-#     def show(self):
-
-#         if self.x == self.y:
-#             return self.x * self.y
-#         else:
-#             return 2*(self.x + self.y)
+#         self.price = price
+#         self.model = model
         
 
-# while True:
-#     x = int(input(">>> "))
-#     y = int(input(">>> "))
-#     kvadrat = Kvadrat(x,y)
+#     def discount_price(self,discount):  
+#         return self.price - self.price * discount / 100     
+# laptop_1 = Laptop('HP',3500000,'Rayzen 5')
+# laptop_2 = Laptop('Acer',4000000,'Intel 5')
 
-#     print(kvadrat.show())
-
-#     ask=input("yes or no ")
-#     if ask=="no":
-#         break
-#     else:
-#         continue
+# laptop_1.discount_price(20)
 
 
 
-class Character:
-    def __init__(self,name,health,power):
-        self.name = name
-        self.health = health
-        self.power = power
 
-    def attack(self,other_character):
-        if self.health >0 :
-            other_character.health -=self.power
-            print(f'{self.name} attack {other_character.name} for {self.power} damaged!')
-            if other_character.health <0:
-                other_character.health=0
-        else:
-            print(f'{self.name} is die !')
 
-    def status(self):
-        print(f'Character: {self.name}; Health: {self.health}; Power:{self.power}')
+# class ShoppingCart:
+#     def __init__(self):
+#         self.__items = [ ]
+#     def add_items(self,name,price):
+#         self.__items.append({'name':name,'price':price})
+#     def remove_items(self,name):
+#         for item in self.__items:
+#             if item['name'] == name:
+#                 self.__items.remove(item)
+#                 print('Removed !')
+#                 return
+                
+#         print(f'{name} could not found !')
+
+#     def total_Price(self):
+#         return sum(item['price'] for item in self.__items)
     
-    def __str__(self):
-        print(f'Character: {self.name}; Health: {self.health}; Power:{self.power}')
+#     def __str__(self):
+#         if not self.__items:
+#             return
+        
+#         cart_lines = ['Basket: ']
+#         for item in self.__items:
+#             cart_lines.append(f' {item['name']}:{item['price']}')
+#         cart_lines.append(f'Total price : {self.total_Price()}$')
+#         return '\n'.join(cart_lines)
+#     def __repr__(self):
+#         return f'ShoppingCart({self.__items})'
+    
 
-Hero = Character('Wobahaki',100,14)
-Madara = Character('Madara',120,8)
+# User = ShoppingCart()
 
-Hero.status()
-Hero.attack(Madara)
-
-Madara.status()
+# User.add_items('Book',100)
+# User.add_items('phone',500)
+# User.add_items('headphone',250)
 
 
+# User.remove_items('phone')
 
+# print(User.total_Price())
+# print(repr(User))
+
+
+
+
+class BankCard:
+    def __init__(self,balance=0):
+        self.balance = balance
+
+    def fill_money(self,money):
+        self.balance += money
+
+    def withdraw(self,money):
+        self.balance -= money
+
+    def card_balance(self):
+       return self.balance
+
+Uzcard = BankCard()
+Uzcard.fill_money(100)
+Uzcard.withdraw(50)
+print(Uzcard.card_balance())
