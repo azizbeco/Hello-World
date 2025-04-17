@@ -1,80 +1,108 @@
-# class Laptop:
-#     def __init__(self,name,price,model):
-#         self.name = name
-#         self.price = price
-#         self.model = model
-        
 
-#     def discount_price(self,discount):  
-#         return self.price - self.price * discount / 100     
-# laptop_1 = Laptop('HP',3500000,'Rayzen 5')
-# laptop_2 = Laptop('Acer',4000000,'Intel 5')
+# class Animal:
+#     def speak(self):
+#         return "???"
+    
+# class Dog(Animal):
+#     def speak(self):
+#         return "Woof"
+# class cat(Animal):
+#     def  speak(self):
+#         return "Meow"
 
-# laptop_1.discount_price(20)
+# def animal_sound(animal):
+#     print(animal.speak())
+
+# animal_sound(Dog())
+
+# animal_sound(cat())
+
+# animal_sound(Animal())
 
 
 
+    
+# class Employer:
+#     def work(self):
+#         return " All "
+
+# class Manager(Employer):
+#     def work(self):
+#         return "I am Manager"
+    
+# class Accounter(Employer):
+#     def work(self):
+#         return "I am Accounter"
+#     def travel_time(self, distance):
+# class Worker(Employer):
+#     def work(self):
+#         return "I am worker"
 
 
-# class ShoppingCart:
+# def employer_method(employer):
+#     print(employer.work())
+
+
+# employer_method(Manager())
+# employer_method(Accounter())
+# employer_method(Worker())
+
+
+
+# class Transport:
+#     def travel_time(self,distance):
+#         return distance/1
+    
+# class Bus(Transport):
+#     def travel_time(self, distance):
+#         return distance/40
+# class Bike(Transport):
+#     def travel_time(self, distance):
+#         return distance/60
+    
+# class Car(Transport):
+
+#         return distance/100
+    
+# class Walk(Transport):
 #     def __init__(self):
-#         self.__items = [ ]
-#     def add_items(self,name,price):
-#         self.__items.append({'name':name,'price':price})
-#     def remove_items(self,name):
-#         for item in self.__items:
-#             if item['name'] == name:
-#                 self.__items.remove(item)
-#                 print('Removed !')
-#                 return
-                
-#         print(f'{name} could not found !')
-
-#     def total_Price(self):
-#         return sum(item['price'] for item in self.__items)
+#         return 
     
-#     def __str__(self):
-#         if not self.__items:
-#             return
-        
-#         cart_lines = ['Basket: ']
-#         for item in self.__items:
-#             cart_lines.append(f' {item['name']}:{item['price']}')
-#         cart_lines.append(f'Total price : {self.total_Price()}$')
-#         return '\n'.join(cart_lines)
-#     def __repr__(self):
-#         return f'ShoppingCart({self.__items})'
+# print(Bike().travel_time(1000))
+# print(Bike().travel_time(1000))
+# print(Car().travel_time(1000))
+# print(Walk().travel_time(1000))
+
+
+
+
+class Character:
+    def __init__(self,name,hp):
+        self.name = name
+        self.hp = hp
+    def attack(self):
+        return "Attack"
+
+    def take_damage(self,amount):
+        self.hp -= amount
+        print(f'{self.name} get {amount} damage. Left {self.hp} HP.')
+    def status(self):
+        print(f'{self.name} | { self.hp}')
+
+class Warrior(Character):
+    def attack(self):
+        return f'{self.name} attack with sword and take 20 damage'
+
+
+
+class Mage(Character):
+    def attack(self):
+        return f'{self.name} attack with Mage and take 30 damage'
     
 
-# User = ShoppingCart()
 
-# User.add_items('Book',100)
-# User.add_items('phone',500)
-# User.add_items('headphone',250)
-
-
-# User.remove_items('phone')
-
-# print(User.total_Price())
-# print(repr(User))
+class Archer(Character):
+    def attack(self):
+        return f'{self.name} attack with Arcch and take 25 damage'
 
 
-
-
-class BankCard:
-    def __init__(self,balance=0):
-        self.balance = balance
-
-    def fill_money(self,money):
-        self.balance += money
-
-    def withdraw(self,money):
-        self.balance -= money
-
-    def card_balance(self):
-       return self.balance
-
-Uzcard = BankCard()
-Uzcard.fill_money(100)
-Uzcard.withdraw(50)
-print(Uzcard.card_balance())
